@@ -1,1 +1,7 @@
-<p>Acá iría un empleado</p>
+<div>
+    <p>Datos del empleado:</p>
+    <p>Nombre: {{ nombre }}</p>
+    <p>Apellido: {{ apellido }}</p>
+    <p>Edad: {{getEdad()}}, {{ getEdad()<18 ? "es menor de edad": "es mayor de edad" }}</p>
+    <p>Empresa: {{ empresa }}</p>
+</div>
