@@ -3,5 +3,7 @@
     <p>Nombre: {{ nombre }}</p>
     <p>Apellido: {{ apellido }}</p>
     <p>Edad: {{getEdad()}}, {{ getEdad()<18 ? "es menor de edad": "es mayor de edad" }}</p>
-    <p>Empresa: {{ empresa }}</p>
+    <p>Empresa: {{ empresa.value }}</p>
+    <br>
+    <p>Introducir empresa: <input type="text" #empresa (keyup)="llamaEmpresa(empresa.value)" disabled=False /></p>
 </div>

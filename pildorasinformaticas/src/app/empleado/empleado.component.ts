@@ -10,10 +10,14 @@ export class EmpleadoComponent implements OnInit {
   nombre = "Juan";
   apellido = "Diaz";
   private edad = 18;
-  empresa = "Rolandolis";
+  // empresa = "Rolandolis";
 
   getEdad(){
     return this.edad;
+  }
+
+  llamaEmpresa(value:String) {
+    console.log(value)
   }
   
   constructor() { }
