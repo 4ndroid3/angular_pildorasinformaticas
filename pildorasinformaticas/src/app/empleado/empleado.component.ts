@@ -10,7 +10,7 @@ export class EmpleadoComponent implements OnInit {
   nombre = "Juan";
   apellido = "Diaz";
   private edad = 18;
-  // empresa = "Rolandolis";
+  empresa2 = "Ramones";
 
   getEdad(){
     return this.edad;
@@ -19,7 +19,24 @@ export class EmpleadoComponent implements OnInit {
   llamaEmpresa(value:String) {
     console.log(value)
   }
+
+  habilitacionCuadro = false;
+  usuRegistrado = false;
+  textoDeRegistro = "No hay nadie registrado";
   
+  getRegistroUsuario() {
+    this.usuRegistrado=false;
+  }
+
+  setUsuarioRegistrado(event:Event) {
+
+    if ((<HTMLInputElement>event.target).value == 'si') {
+      this.textoDeRegistro = "El usuario se acaba de registrar";
+    } else {
+      this.textoDeRegistro = "No hay nadie registrado";
+    }
+  }
+
   constructor() { }
 
   ngOnInit(): void {

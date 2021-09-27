@@ -3,7 +3,19 @@
     <p>Nombre: {{ nombre }}</p>
     <p>Apellido: {{ apellido }}</p>
     <p>Edad: {{getEdad()}}, {{ getEdad()<18 ? "es menor de edad": "es mayor de edad" }}</p>
-    <p>Empresa: {{ empresa.value }}</p>
+        <br>
+    <p>Empresa Event Binding: {{ empresa.value }}</p>
+    <p>Introducir empresa: <input type="text" #empresa (keyup)="llamaEmpresa(empresa.value)" [disabled]="habilitacionCuadro"></p>
     <br>
-    <p>Introducir empresa: <input type="text" #empresa (keyup)="llamaEmpresa(empresa.value)" disabled=False /></p>
+    <p>Empresa Binding Bidireccional: {{ empresa2 }}</p>
+    Introducir empresa: <input type="text" [(ngModel)]="empresa2">
+
+    <br>
+    <h3>Registro:</h3>
+    {{textoDeRegistro}}
+    <br>
+    Registrado: <input type="radio" name="nRegistro" value="si" id="registro" [checked]="usuRegistrado" (click)="setUsuarioRegistrado($event)">
+    No Registrado: <input type="radio" name="nRegistro" value="no" id="registro" (click)="setUsuarioRegistrado($event)">
+    
+    {{getRegistroUsuario()}}
 </div>
