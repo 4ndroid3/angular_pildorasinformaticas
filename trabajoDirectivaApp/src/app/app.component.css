@@ -1,0 +1,11 @@
+ul {
+    background-color: rgb(86, 32, 124);
+    border-radius: 2%;
+}
+
+div.container {
+    color: white;
+    border-color: black;
+    border-style: solid;
+    background-color: indigo;
+}

@@ -11,6 +11,17 @@ export class AppComponent {
   registrado = false;
   nombre: string = '';
   apellido: string = '';
+  entradas: any;
+
+  constructor() {
+    this.entradas = [
+      { titulo: 'Python cada día mas presente'},
+      { titulo: 'Java presente desde hace más de 20 años'},
+      { titulo: 'JavaScript cada vez más funcional'},
+      { titulo: 'Kotlin, potencia para tus apps '},
+      { titulo: '¿Dónde quedó Pascal?'},
+    ]
+  }
 
   registrarUsuario(){
     this.registrado = true;
