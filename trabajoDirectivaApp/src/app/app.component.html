@@ -1,14 +1,15 @@
 <div class="container">
   <h1 style="text-align: center;">{{titulo}}</h1><br>
   <form>
-    <input type="text" name="nombre" [(ngModel)]="nombre"><br>
-    <input type="text" name="apellido"[(ngModel)]="apellido"><br>
+    <input type="text" placeholder="Nombre" name="nombre" [(ngModel)]="nombre"><br>
+    <input type="text" placeholder="Apellido" name="apellido"[(ngModel)]="apellido"><br>
+    <input type="text" placeholder="Cargo" name="cargo"[(ngModel)]="cargo"><br>
     <br>
     <input type="submit" value="Registrar" (click)="registrarUsuario()">
     
   </form>
   <br>
-  <p *ngIf="registrado; else sinRegistrar">{{ mensaje }} con el nombre de {{ nombre }} {{ apellido }}</p>
+  <p *ngIf="registrado; else sinRegistrar">{{ mensaje }} con el nombre de {{ nombre }} {{ apellido }}, tiene el cargo de <span [ngClass]="{paraDirectores: cargo=='Director'}">{{ cargo }}</span></p>
   <ng-template #sinRegistrar>
     <p>Naide registrado</p>
   </ng-template>
