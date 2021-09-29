@@ -9,6 +9,11 @@ import { Empleado } from './empleado.model';
 export class AppComponent {
   titulo = 'Listado de empleados';
 
+  cuadroNombre: string = '';
+  cuadroApellido: string = '';
+  cuadroCargo: string = '';
+  cuadroSalario: number = 0;
+
   empleados: Empleado[] = [
     new Empleado('Ricardo','Ruben','Presidente',600000),
     new Empleado('Pico','Monaco','Jefe',200000),
@@ -25,10 +30,4 @@ export class AppComponent {
     );
     this.empleados.push(miEmpleado);
   }
-
-  cuadroNombre: string = '';
-  cuadroApellido: string = '';
-  cuadroCargo: string = '';
-  cuadroSalario: number = 0;
-
 }
