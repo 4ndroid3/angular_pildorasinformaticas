@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Empleado } from './empleado.model';
+import { ServicioEmpleadosService } from './servicio-empleados.service';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,11 @@ import { Empleado } from './empleado.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  constructor(private miServicio: ServicioEmpleadosService) {
+    
+  }
+
   titulo = 'Listado de empleados';
 
   cuadroNombre: string = '';
@@ -27,6 +33,11 @@ export class AppComponent {
       this.cuadroApellido, 
       this.cuadroCargo, 
       this.cuadroSalario
+    );
+    this.miServicio.muestraMensaje(
+      `Se registró con exito el usuario: 
+      ${this.cuadroNombre} ${this.cuadroApellido}
+      con el cargo de ${this.cuadroCargo}`
     );
     this.empleados.push(miEmpleado);
   }
